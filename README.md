@@ -102,9 +102,9 @@
 </picture> -->
 
 
-<div align="center">
+
 ![snake gif](https://github.com/Guru-1205/Guru-1205/blob/output/github-snake.svg)
-</div>
+
 
 
 ###
