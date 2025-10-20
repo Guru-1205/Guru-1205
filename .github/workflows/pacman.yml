@@ -4,13 +4,13 @@ on:
   push:
   workflow_dispatch:
   schedule:
-    - cron: "0 */12 * * *" # every 12 hours
+    - cron: "0 */12 * * *" # run every 12 hours
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Install pacman-contribution-graph CLI
@@ -19,14 +19,23 @@ jobs:
       - name: Create output directory
         run: mkdir -p dist
 
-      - name: Generate pacman SVG
+      - name: Generate Pac-Man SVGs
         run: |
-          pacman-contribution-graph Guru-1205 > dist/pacman-contribution-graph.svg
+          # Light theme
+          pacman-contribution-graph \
+            --platform github \
+            --gameTheme github \
+            --username Guru-1205 \
+            -o dist/pacman-contribution-graph.svg
 
-      - name: Create dark-mode copy
-        run: cp dist/pacman-contribution-graph.svg dist/pacman-contribution-graph-dark.svg
+          # Dark theme
+          pacman-contribution-graph \
+            --platform github \
+            --gameTheme github-dark \
+            --username Guru-1205 \
+            -o dist/pacman-contribution-graph-dark.svg
 
-      - name: Push to output branch
+      - name: Push Pac-Man SVGs to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output
