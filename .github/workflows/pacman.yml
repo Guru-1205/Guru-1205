@@ -4,35 +4,29 @@ on:
   push:
   workflow_dispatch:
   schedule:
-    - cron: "0 */12 * * *" # run every 12 hours
+    - cron: "0 */12 * * *" # every 12 hours
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v3
+
+      - name: Install pacman-contribution-graph CLI
+        run: npm install -g pacman-contribution-graph
 
       - name: Create output directory
         run: mkdir -p dist
 
-      - name: Generate pacman-contribution-graph.svg
-        uses: abozanona/pacman-contribution-graph@main
-        with:
-          github_user_name: Guru-1205
-        env:
-          OUTPUT_FILE: dist/pacman-contribution-graph.svg
-
-      - name: Prepare dark mode duplicate
+      - name: Generate pacman SVG
         run: |
-          if [ -f dist/pacman-contribution-graph.svg ]; then
-            cp dist/pacman-contribution-graph.svg dist/pacman-contribution-graph-dark.svg
-          else
-            echo "❌ dist/pacman-contribution-graph.svg not found!"
-            exit 1
-          fi
+          pacman-contribution-graph Guru-1205 > dist/pacman-contribution-graph.svg
 
-      - name: Push pacman-contribution-graph.svg to the output branch
+      - name: Create dark-mode copy
+        run: cp dist/pacman-contribution-graph.svg dist/pacman-contribution-graph-dark.svg
+
+      - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output
