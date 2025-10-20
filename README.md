@@ -95,11 +95,24 @@
 
 ###
 
-<picture>
+<!-- <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Guru-1205/Guru-1205/output/pacman-contribution-graph-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Guru-1205/Guru-1205/output/pacman-contribution-graph.svg">
   <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/Guru-1205/Guru-1205/output/pacman-contribution-graph.svg">
+</picture> -->
+
+
+<picture>
+  <!-- Dark mode -->
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Guru-1205/Guru-1205/output/github-snake-dark.svg">
+  
+  <!-- Light mode -->
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Guru-1205/Guru-1205/output/github-snake.svg">
+  
+  <!-- Fallback GIF for browsers that don't support <picture> -->
+  <img alt="GitHub Snake Animation" src="https://raw.githubusercontent.com/Guru-1205/Guru-1205/output/ocean.gif">
 </picture>
+
 
 
 ###
