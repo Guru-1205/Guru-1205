@@ -102,7 +102,7 @@
 </picture> -->
 
 
-<picture>
+<!-- <picture>
   <!-- Dark mode -->
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Guru-1205/Guru-1205/blob/output/github-snake-dark.svg">
   
@@ -111,7 +111,8 @@
   
   <!-- Fallback GIF for browsers that don't support <picture> -->
   <img alt="GitHub Snake Animation" src="https://raw.githubusercontent.com/Guru-1205/Guru-1205/blob/output/ocean.gif">
-</picture>
+</picture> -->
+![snake gif](https://github.com/Guru-1205/Guru-1205/blob/output/ocean.gif)
 
 
 
