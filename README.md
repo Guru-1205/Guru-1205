@@ -77,7 +77,7 @@
 ###
 
 <div align="center">
-  <a href="www.linkedin.com/in/gurucharan1205" target="_blank">
+  <a href="https://www.linkedin.com/in/gurucharan1205" target="_blank">
     <img src="https://img.shields.io/static/v1?message=gurucharan1205&logo=linkedin&label=LinkedIn&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="linkedin logo"  />
   </a>
   <a href="https://x.com/gurucharan1205" target="_blank">
