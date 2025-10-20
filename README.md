@@ -102,6 +102,10 @@
 </picture> -->
 
 
+<!--
+![snake gif](https://github.com/Guru-1205/Guru-1205/blob/output/github-snake.svg)
+
+-->
 
 
 
