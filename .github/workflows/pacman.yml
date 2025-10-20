@@ -10,22 +10,25 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Create pacman animation
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create output directory
+        run: mkdir -p dist
+
+      - name: Generate pacman-contribution-graph.svg
         uses: abozanona/pacman-contribution-graph@main
         with:
-          # GitHub user name to read the contribution graph from (**required**)
-          # using action context var `github.repository_owner` or specified user
           github_user_name: Guru-1205
+        env:
+          OUTPUT_FILE: dist/pacman-contribution-graph.svg
 
-      - name: Prepare output files
+      - name: Prepare dark mode duplicate
         run: |
-          mkdir -p dist
-          if [ -f pacman-contribution-graph.svg ]; then
-            mv pacman-contribution-graph.svg dist/
-            # Duplicate to support dark mode in README <picture> tag
+          if [ -f dist/pacman-contribution-graph.svg ]; then
             cp dist/pacman-contribution-graph.svg dist/pacman-contribution-graph-dark.svg
           else
-            echo "❌ pacman-contribution-graph.svg not found!"
+            echo "❌ dist/pacman-contribution-graph.svg not found!"
             exit 1
           fi
 
